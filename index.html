@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mosta9bali — My Future</title>
+  <title>مستقبلي — My Future</title>
   <style>
     :root{
       --accent:#0b5;
@@ -14,10 +14,12 @@
       --meta:#666;
     }
     body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif;
+      font-family:"Noto Sans Arabic",system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif;
       margin:0;
       background:var(--bg);
       color:var(--text);
+      direction:rtl;
+      text-align:right;
     }
 
     /* Language Selector */
@@ -55,6 +57,7 @@
       gap:16px;
       background:#fff;
       box-shadow:0 2px 5px rgba(0,0,0,0.05);
+      justify-content:space-between;
     }
     .logo{
       font-weight:800;
@@ -83,7 +86,7 @@
     }
     .welcome p{
       font-size:18px;
-      line-height:1.5;
+      line-height:1.6;
     }
     .hero{
       display:flex;
@@ -113,6 +116,7 @@
       font-size:14px;
       outline:none;
       transition:0.2s;
+      text-align:right;
     }
     input:focus, select:focus{
       border-color:var(--accent);
@@ -181,37 +185,37 @@
   </div>
 
   <header>
-    <div class="logo">Mosta9bali <span style="font-weight:400;margin-left:8px;font-size:12px;color:#666">مستقبلي</span></div>
+    <div class="logo">مستقبلي <span style="font-weight:400;margin-right:8px;font-size:12px;color:#666">Mosta9bali</span></div>
   </header>
 
   <main>
     <!-- Welcome Section -->
     <section class="welcome" aria-label="welcome">
-      <h1>Welcome to Mosta9bali!</h1>
-      <p class="lead">Hello, Habibi student! 🎓<br>Here you can discover scholarships across the Arab & Islamic world and beyond. Take your time, explore, and find the opportunity that’s right for you.</p>
+      <h1>مرحبًا بك في مستقبلي!</h1>
+      <p class="lead">مرحبًا أيها الطالب! 🎓 <br>هنا يمكنك اكتشاف المنح الدراسية في العالم العربي والإسلامي وخارجه. خذ وقتك، واستكشف، وابحث عن الفرصة المناسبة لك.</p>
     </section>
 
     <!-- Search & Filter Section -->
     <section class="hero" aria-label="intro">
-      <h1>Your future. Scholarships for the world.</h1>
-      <p class="lead">Find scholarships, deadlines, and application tips — focused on Switzerland, USA, UK, Austria, Germany and more.</p>
+      <h1>مستقبلك يبدأ من هنا. منح دراسية للعالم.</h1>
+      <p class="lead">ابحث عن المنح الدراسية، المواعيد النهائية، ونصائح التقديم — موجهة نحو سويسرا، الولايات المتحدة، المملكة المتحدة، النمسا، ألمانيا وغيرها.</p>
 
       <div class="controls">
-        <input id="search" placeholder="Search by scholarship name, country or subject" />
+        <input id="search" placeholder="ابحث حسب اسم المنحة أو الدولة أو التخصص" />
         <select id="country">
-          <option value="">All countries</option>
-          <option>Switzerland</option>
-          <option>USA</option>
-          <option>UK</option>
-          <option>Austria</option>
-          <option>Germany</option>
+          <option value="">كل الدول</option>
+          <option>سويسرا</option>
+          <option>الولايات المتحدة</option>
+          <option>المملكة المتحدة</option>
+          <option>النمسا</option>
+          <option>ألمانيا</option>
         </select>
         <select id="level">
-          <option value="">Any level</option>
-          <option>Highschool</option>
-          <option>Undergraduate</option>
-          <option>Masters</option>
-          <option>PhD</option>
+          <option value="">جميع المستويات</option>
+          <option>ثانوي</option>
+          <option>بكالوريوس</option>
+          <option>ماجستير</option>
+          <option>دكتوراه</option>
         </select>
       </div>
     </section>
@@ -225,7 +229,7 @@
   </main>
 
   <footer>
-    Built for students. Controlled by: Karim Chennoufi.
+    صُمم للطلاب. بإشراف كريم شنوفي.
   </footer>
 
   <!-- Search & Filter Script -->
@@ -263,9 +267,9 @@
       header: true,
       complete: function(results) {
         const list = document.getElementById('list');
-        list.innerHTML = ''; // remove any example cards
+        list.innerHTML = ''; 
         results.data.forEach(scholarship => {
-          if(!scholarship.Name) return; // skip empty rows
+          if(!scholarship.Name) return;
           const card = document.createElement('article');
           card.className = 'card';
           card.dataset.country = scholarship.Country;
@@ -273,9 +277,9 @@
 
           card.innerHTML = `
             <h3>${scholarship.Name}</h3>
-            <div class="meta">${scholarship.Country} · ${scholarship.Level} · ${scholarship.Funding} · Deadline: ${scholarship.Deadline}</div>
+            <div class="meta">${scholarship.Country} · ${scholarship.Level} · ${scholarship.Funding} · آخر موعد: ${scholarship.Deadline}</div>
             <p>${scholarship.Notes}</p>
-            <a class="cta" href="${scholarship.Link}" target="_blank" rel="noopener">Visit official page</a>
+            <a class="cta" href="${scholarship.Link}" target="_blank" rel="noopener">زيارة الصفحة الرسمية</a>
           `;
           list.appendChild(card);
         });
