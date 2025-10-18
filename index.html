@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mosta9bali — My Future</title>
+  <style>
+    :root{
+      --accent:#0b5;
+      --accent-hover:#08a;
+      --bg:#f5f6fa;
+      --card-bg:#fff;
+      --text:#111;
+      --meta:#666;
+    }
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif;
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    /* Flags Bar */
+    .flags-bar{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      padding:6px 0;
+      background:#fff;
+      border-bottom:1px solid #eee;
+      box-shadow:0 1px 4px rgba(0,0,0,0.05);
+    }
+    .flags-bar img{
+      width:28px;
+      height:auto;
+      cursor:pointer;
+      transition:transform 0.2s;
+    }
+    .flags-bar img:hover{
+      transform:scale(1.2);
+    }
+
+    /* Header */
+    header{
+      padding:28px 20px;
+      border-bottom:1px solid #eee;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      background:#fff;
+      box-shadow:0 2px 5px rgba(0,0,0,0.05);
+    }
+    .logo{
+      font-weight:800;
+      font-size:20px;
+      color:var(--accent);
+    }
+
+    /* Main content */
+    main{
+      max-width:1000px;
+      margin:28px auto;
+      padding:0 18px;
+    }
+    .welcome{
+      text-align:center;
+      padding:50px 20px;
+      background:linear-gradient(135deg,#0b5,#08a);
+      border-radius:12px;
+      margin-bottom:24px;
+      color:white;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    }
+    .welcome h1{
+      font-size:36px;
+      margin-bottom:12px;
+    }
+    .welcome p{
+      font-size:18px;
+      line-height:1.5;
+    }
+    .hero{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin-bottom:22px;
+    }
+    .hero h1{
+      margin:0;
+      font-size:28px;
+      color:#333;
+    }
+    .hero p.lead{
+      margin:0;
+      color:#555;
+    }
+    .controls{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+    input,select{
+      padding:10px 12px;
+      border:1px solid #ddd;
+      border-radius:8px;
+      font-size:14px;
+      outline:none;
+      transition:0.2s;
+    }
+    input:focus, select:focus{
+      border-color:var(--accent);
+      box-shadow:0 0 5px rgba(11,85,85,0.3);
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+    .card{
+      border-radius:12px;
+      padding:16px;
+      background:var(--card-bg);
+      box-shadow:0 6px 20px rgba(0,0,0,0.05);
+      transition:transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 12px 25px rgba(0,0,0,0.1);
+    }
+    .card h3{
+      margin:0 0 8px 0;
+      font-size:18px;
+      color:var(--accent);
+    }
+    .meta{
+      font-size:13px;
+      color:var(--meta);
+      margin-bottom:10px;
+    }
+    .cta{
+      display:inline-block;
+      margin-top:8px;
+      padding:8px 14px;
+      border-radius:8px;
+      text-decoration:none;
+      background:var(--accent);
+      color:white;
+      font-weight:700;
+      transition:0.2s;
+    }
+    .cta:hover{
+      background:var(--accent-hover);
+    }
+    footer{
+      padding:20px;
+      color:#666;
+      text-align:center;
+      border-top:1px solid #eee;
+      margin-top:28px;
+      font-size:14px;
+    }
+    @media (min-width:760px){
+      h1{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Flags Bar -->
+  <div class="flags-bar">
+    <img src="https://flagcdn.com/w20/ch.png" alt="Switzerland" title="Switzerland">
+    <img src="https://flagcdn.com/w20/us.png" alt="USA" title="USA">
+    <img src="https://flagcdn.com/w20/gb.png" alt="UK" title="UK">
+    <img src="https://flagcdn.com/w20/at.png" alt="Austria" title="Austria">
+    <img src="https://flagcdn.com/w20/de.png" alt="Germany" title="Germany">
+  </div>
+
+  <header>
+    <div class="logo">Mosta9bali <span style="font-weight:400;margin-left:8px;font-size:12px;color:#666">مستقبالي</span></div>
+  </header>
+
+  <main>
+    <!-- Welcome Section -->
+    <section class="welcome" aria-label="welcome">
+      <h1>Welcome to Mosta9bali!</h1>
+      <p class="lead">Hello, student! 🎓<br>Here you can discover scholarships across the Arab & Islamic world and beyond. Take your time, explore, and find the opportunity that’s right for you.</p>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="hero" aria-label="intro">
+      <h1>Your future. Scholarships for the world.</h1>
+      <p class="lead">Find scholarships, deadlines, and application tips — focused on Switzerland, USA, UK, Austria, Germany and more.</p>
+
+      <div class="controls">
+        <input id="search" placeholder="Search by scholarship name, country or subject" />
+        <select id="country">
+          <option value="">All countries</option>
+          <option>Switzerland</option>
+          <option>USA</option>
+          <option>UK</option>
+          <option>Austria</option>
+          <option>Germany</option>
+        </select>
+        <select id="level">
+          <option value="">Any level</option>
+          <option>Highschool</option>
+          <option>Undergraduate</option>
+          <option>Masters</option>
+          <option>PhD</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Scholarships List -->
+    <section>
+      <div id="list" class="cards">
+        <!-- Scholarships will appear here automatically -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Built for students. Controlled by: Mosta9bali.
+  </footer>
+
+  <!-- Search & Filter Script -->
+  <script>
+    const search = document.getElementById('search');
+    const country = document.getElementById('country');
+    const level = document.getElementById('level');
+
+    function filter() {
+      const q = search.value.trim().toLowerCase();
+      const c = country.value;
+      const l = level.value;
+      const cards = [...document.querySelectorAll('.card')];
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const matchQ = !q || text.includes(q);
+        const matchC = !c || card.dataset.country === c;
+        const matchL = !l || card.dataset.level === l;
+        card.style.display = (matchQ && matchC && matchL) ? '' : 'none';
+      });
+    }
+
+    search.addEventListener('input', filter);
+    country.addEventListener('change', filter);
+    level.addEventListener('change', filter);
+  </script>
+
+  <!-- PapaParse library for CSV -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script>
+    const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT9wskpvxLC7LxDRkiu3Iu2Qo4E6YAuexsm3XZf8Rixba3r8t_Tq5riWO-RuyKA5iJ_dLKqMMwg1mKS/pub?output=csv';
+
+    Papa.parse(sheetUrl, {
+      download: true,
+      header: true,
+      complete: function(results) {
+        const list = document.getElementById('list');
+        list.innerHTML = ''; // remove any example cards
+        results.data.forEach(scholarship => {
+          if(!scholarship.Name) return; // skip empty rows
+          const card = document.createElement('article');
+          card.className = 'card';
+          card.dataset.country = scholarship.Country;
+          card.dataset.level = scholarship.Level;
+
+          card.innerHTML = `
+            <h3>${scholarship.Name}</h3>
+            <div class="meta">${scholarship.Country} · ${scholarship.Level} · ${scholarship.Funding} · Deadline: ${scholarship.Deadline}</div>
+            <p>${scholarship.Notes}</p>
+            <a class="cta" href="${scholarship.Link}" target="_blank" rel="noopener">Visit official page</a>
+          `;
+          list.appendChild(card);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
