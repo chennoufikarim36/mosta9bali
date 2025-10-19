@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mosta9bali — Your Future, Your Power</title>
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -16,223 +15,57 @@
   --card-bg: #161616;
   --text: #eee;
   --meta: #aaa;
-  --accent: #123456; /* royal blue */
 }
 
 /* GENERAL */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
+body { margin: 0; font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; scroll-behavior: smooth; }
 
 /* HEADER */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: rgba(0,0,0,0.9);
-  border-bottom: 1px solid #222;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(6px);
-}
-.logo {
-  font-size: 30px;
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  color: var(--gold);
-  line-height: 1.1;
-}
-.logo span {
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--gold-hover);
-  margin-top: 2px;
-}
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  margin-left: 25px;
-  font-weight: 600;
-  transition: color 0.2s;
-}
+header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: rgba(0,0,0,0.9); border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 100; }
+.logo { font-size: 30px; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--gold); }
+.logo span { display: block; font-size: 13px; font-weight: 400; color: var(--gold-hover); }
+nav a { color: var(--text); text-decoration: none; margin-left: 25px; font-weight: 600; }
 nav a:hover { color: var(--gold); }
-.language-switch, .login-btn {
-  background: none;
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  padding: 6px 14px;
-  margin-left: 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.language-switch:hover, .login-btn:hover {
-  background: var(--gold);
-  color: #000;
-}
-
-/* HERO SECTION */
-.hero {
-  position: relative;
-  height: 90vh;
-  background: url('images/hero-bg.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  top:0; left:0; right:0; bottom:0;
-  background: rgba(0,0,0,0.6);
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 0 20px;
-}
-.hero-content h1 {
-  font-size: 48px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-hover));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: 'Playfair Display', serif;
-}
-.hero-content p {
-  font-size: 18px;
-  margin-top: 15px;
-  color: #ddd;
-}
-.cta {
-  display: inline-block;
-  margin-top: 30px;
-  background: var(--gold);
-  color: #000;
-  padding: 12px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.2s;
-}
-.cta:hover { background: var(--gold-hover); }
+.language-switch, .login-btn { background: none; border: 1px solid var(--gold); color: var(--gold); padding: 6px 14px; margin-left: 15px; border-radius: 6px; cursor: pointer; }
+.language-switch:hover, .login-btn:hover { background: var(--gold); color: #000; }
 
 /* MAIN CONTENT */
-main {
-  max-width: 1100px;
-  margin: 70px auto;
-  padding: 0 20px;
-}
-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  color: var(--gold);
-  text-align: center;
-  margin-bottom: 30px;
-}
+main { max-width: 1100px; margin: 70px auto; padding: 0 20px; }
+section h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--gold); text-align: center; margin-bottom: 30px; }
 
 /* OPPORTUNITIES GRID */
-section.opportunities {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-.opportunity-card {
-  background: var(--card-bg);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.opportunity-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-}
-.opportunity-card img {
-  width: 100%;
-  border-radius: 10px;
-  height: 160px;
-  object-fit: cover;
-  margin-bottom: 12px;
-}
-.opportunity-card h3 {
-  background: linear-gradient(90deg, var(--gold), var(--gold-hover));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 20px;
-  margin: 8px 0;
-}
+section.opportunities { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.opportunity-card { background: var(--card-bg); border-radius: 12px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.opportunity-card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
+.opportunity-card img { width: 100%; border-radius: 10px; height: 160px; object-fit: cover; margin-bottom: 12px; }
+.opportunity-card h3 { background: linear-gradient(90deg, var(--gold), var(--gold-hover)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 20px; margin: 8px 0; }
 .opportunity-meta { color: var(--meta); font-size: 14px; margin-bottom: 10px; }
-.opportunity-card a {
-  text-decoration: none;
-  display: inline-block;
-  background: var(--gold);
-  color: #000;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 6px;
-  transition: background 0.2s ease;
-}
+.opportunity-card a { text-decoration: none; display: inline-block; background: var(--gold); color: #000; font-weight: 600; padding: 8px 14px; border-radius: 6px; transition: background 0.2s ease; }
 .opportunity-card a:hover { background: var(--gold-hover); }
 
-/* PHILOSOPHY SECTION */
-section.philosophy {
-  margin-top: 80px;
-  text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #111, #181818);
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-}
-section.philosophy p {
-  font-size: 18px;
-  max-width: 800px;
-  margin: auto;
-  line-height: 1.6;
-  color: #ddd;
-}
+/* PHILOSOPHY */
+section.philosophy { margin-top: 80px; text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #111, #181818); border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
+section.philosophy p { font-size: 18px; max-width: 800px; margin: auto; line-height: 1.6; color: #ddd; }
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 25px;
-  border-top: 1px solid #222;
-  color: var(--meta);
-  font-size: 14px;
-  margin-top: 60px;
-}
-footer strong { color: var(--gold); }
+footer { text-align: center; padding: 25px; border-top: 1px solid #222; color: var(--meta); font-size: 14px; margin-top: 60px; }
 
-/* ANIMATIONS */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* SIGN IN MODAL */
+#loginModal { display:flex; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:200; }
+#loginModal div { background:var(--card-bg); padding:30px; border-radius:12px; width:320px; text-align:center; position:relative; }
+#loginModal input { width:90%; padding:10px; margin:8px 0; border-radius:6px; border:none; }
+#loginModal button { margin-top:12px; background:var(--gold); color:#000; padding:10px 20px; border:none; border-radius:6px; font-weight:600; cursor:pointer; }
+#loginModal .close-btn { position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px; color:var(--gold); }
+
+/* FADE-IN */
+.fade-in { opacity:0; transform: translateY(20px); transition: all 0.8s ease; }
+.fade-in.visible { opacity:1; transform: translateY(0); }
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="logo">
-    Mosta9bali
-    <span>Your Future. Your Power.</span>
-  </div>
+  <div class="logo">Mosta9bali<span>Your Future. Your Power.</span></div>
   <nav>
     <a href="index.html">Home</a>
     <a href="opportunities.html">Opportunities</a>
@@ -252,14 +85,12 @@ footer strong { color: var(--gold); }
         <div class="opportunity-meta">🇦🇹 Austria • Deadline: May 30, 2025</div>
         <a href="opportunities/uwc-austria.html">See Details</a>
       </div>
-
       <div class="opportunity-card">
         <img src="images/opp2.jpg" alt="Opportunity 2">
         <h3>UN Youth Delegate Program</h3>
         <div class="opportunity-meta">🇺🇳 Global • Deadline: June 15, 2025</div>
         <a href="opportunities/un-delegate.html">See Details</a>
       </div>
-
       <div class="opportunity-card">
         <img src="images/opp3.jpg" alt="Opportunity 3">
         <h3>Yale Young Global Scholars</h3>
@@ -271,100 +102,85 @@ footer strong { color: var(--gold); }
 
   <section class="philosophy fade-in">
     <h2>Our Philosophy</h2>
-    <p>
-      At <strong>Mosta9bali</strong>, we believe that every student — no matter where they are born —
-      deserves a chance to shine. We connect ambition with opportunity, and dreams with reality.
-      Together, we build a future of fairness, education, and hope.
-    </p>
+    <p>At <strong>Mosta9bali</strong>, we believe every student deserves a chance to shine. We connect ambition with opportunity, and dreams with reality.</p>
   </section>
 </main>
 
+<footer>
+  <p>© 2025 Mosta9bali — A Project by <strong>ChennoufiWorld</strong></p>
+</footer>
+
 <!-- SIGN IN / SIGN UP MODAL -->
-<div id="loginModal" style="display:flex; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:200;">
-  <div style="background:var(--card-bg); padding:30px; border-radius:12px; width:320px; text-align:center; position:relative;">
-    <span onclick="closeLogin()" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;">&times;</span>
-    <h2 style="color:var(--gold); margin-bottom:20px;">Sign In / Sign Up</h2>
-    <input type="email" id="email" placeholder="Email" required style="width:90%; padding:10px; margin:8px 0; border-radius:6px; border:none;"><br>
-    <input type="password" id="password" placeholder="Password" required style="width:90%; padding:10px; margin:8px 0; border-radius:6px; border:none;"><br>
-    <button onclick="signUp()" style="margin-top:12px; background:var(--gold); color:#000; padding:10px 20px; border:none; border-radius:6px; font-weight:600;">Sign Up</button>
-    <button onclick="signIn()" style="margin-top:12px; background:var(--gold-hover); color:#000; padding:10px 20px; border:none; border-radius:6px; font-weight:600;">Sign In</button>
+<div id="loginModal">
+  <div>
+    <span class="close-btn" onclick="closeLogin()">&times;</span>
+    <h2 style="color:var(--gold)">Sign In / Sign Up</h2>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="signUp()">Sign Up</button>
+    <button onclick="signIn()">Sign In</button>
   </div>
 </div>
 
-<footer>
-  <p>© 2025 Mosta9bali — A Project by <strong>ChennoufiWorld</strong>.</p>
-  <p style="color: var(--gold); font-size: 13px;">Excellence • Opportunity • Legacy</p>
-</footer>
-
 <!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
 
-<script>
-  // Firebase configuration
+  // Your Firebase config
   const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyBQvMCwUtuERjOYlaZf4neLj-_Gic3iubE",
+    authDomain: "mosta9bali-8acb5.firebaseapp.com",
+    projectId: "mosta9bali-8acb5",
+    storageBucket: "mosta9bali-8acb5.firebasestorage.app",
+    messagingSenderId: "630198916475",
+    appId: "1:630198916475:web:f09fc18e6a37efcf3b99de",
+    measurementId: "G-J85075FEV1"
   };
-  const app = firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
 
-  function switchLang() { alert("Arabic version is coming very soon ❤️"); }
-  function showLogin() { document.getElementById('loginModal').style.display = 'flex'; }
-  function closeLogin() { document.getElementById('loginModal').style.display = 'none'; }
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const auth = getAuth();
 
-  // Auto-show modal on page load
-  window.onload = function() {
-    showLogin();
-  }
+  function switchLang(){ alert("Arabic version coming soon ❤️"); }
+  function showLogin(){ document.getElementById('loginModal').style.display='flex'; }
+  function closeLogin(){ document.getElementById('loginModal').style.display='none'; }
 
-  // Close modal when clicking outside content
-  document.getElementById('loginModal').addEventListener('click', function(e) {
-    if (e.target === this) closeLogin();
-  });
-
-  // Fade-in on scroll
-  document.addEventListener("scroll", function() {
-    document.querySelectorAll('.fade-in').forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-        el.classList.add('visible');
-      }
+  // Fade-in scroll
+  document.addEventListener("scroll", ()=>{
+    document.querySelectorAll('.fade-in').forEach(el=>{
+      if(el.getBoundingClientRect().top < window.innerHeight-100) el.classList.add('visible');
     });
   });
 
+  // Auto-show modal
+  window.onload = showLogin;
+
   // Sign Up
-  function signUp() {
+  window.signUp = function(){
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    auth.createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        alert('Sign Up Successful!');
-        closeLogin();
-      })
-      .catch((error) => { alert(error.message); });
+    createUserWithEmailAndPassword(auth,email,password)
+      .then(()=>{ alert('Sign Up Successful!'); closeLogin(); })
+      .catch(err=>alert(err.message));
   }
 
   // Sign In
-  function signIn() {
+  window.signIn = function(){
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    auth.signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        alert('Sign In Successful!');
-        closeLogin();
-      })
-      .catch((error) => { alert(error.message); });
+    signInWithEmailAndPassword(auth,email,password)
+      .then(()=>{ alert('Sign In Successful!'); closeLogin(); })
+      .catch(err=>alert(err.message));
   }
 
-  // Track user session
-  auth.onAuthStateChanged((user) => {
-    if (user) console.log('User signed in:', user.email);
+  // Track user
+  onAuthStateChanged(auth, user=>{
+    if(user) console.log('User signed in:', user.email);
     else console.log('No user signed in');
   });
+
 </script>
 
 </body>
