@@ -1,106 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mosta9bali — Your Future. Your Power.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mosta9bali — Home</title>
 <style>
-:root{
-  --gold:#d4af37;
-  --gold-hover:#f0c75e;
-  --bg:#111;
-  --card-bg:#1a1a1a;
-  --text:#eee;
-  --meta:#aaa;
+:root {
+  --gold: #d4af37;
+  --gold-hover: #f0c75e;
+  --bg: #111;
+  --card-bg: #1a1a1a;
+  --text: #eee;
+  --meta: #aaa;
 }
-body{
+body {
+  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
+  background: var(--bg);
+  color: var(--text);
 }
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 30px;
-  background:#000;
-  border-bottom:1px solid #222;
-  position:sticky;
-  top:0;
-  z-index:100;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background: #000;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-.logo{
-  font-size:28px;
-  font-weight:700;
-  color:var(--gold);
-  display:flex;
-  flex-direction:column;
-  line-height:1.1;
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gold);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
 }
-.logo span{
-  font-size:14px;
-  font-weight:400;
-  color:var(--gold);
-  margin-top:2px;
+.logo span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gold);
+  margin-top: 2px;
 }
-nav a{
-  color:var(--text);
-  text-decoration:none;
-  margin-left:20px;
-  font-weight:600;
-  transition:color 0.2s;
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  transition: color 0.2s;
 }
-nav a:hover{
-  color:var(--gold-hover);
+nav a:hover {
+  color: var(--gold-hover);
 }
-main{
-  max-width:1000px;
-  margin:50px auto;
-  padding:0 20px;
+main {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
 }
-.welcome{
-  text-align:center;
-  padding:60px 20px;
-  background:linear-gradient(135deg,#222,#000);
-  border-radius:12px;
-  margin-bottom:40px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.5);
+section.welcome {
+  text-align: center;
+  background: linear-gradient(135deg, #222, #333);
+  padding: 50px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
-.welcome h1{
-  font-size:38px;
-  color:var(--gold);
-  margin-bottom:12px;
+section.welcome h1 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  color: var(--gold);
 }
-.welcome p{
-  font-size:18px;
-  color:var(--text);
-  line-height:1.5;
+section.welcome p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text);
 }
-button.cta{
-  background:var(--gold);
-  color:#111;
-  padding:12px 22px;
-  border:none;
-  border-radius:8px;
-  font-size:16px;
-  font-weight:700;
-  cursor:pointer;
-  transition:0.3s;
-}
-button.cta:hover{
-  background:var(--gold-hover);
-}
-footer{
-  text-align:center;
-  padding:20px;
-  border-top:1px solid #222;
-  color:var(--meta);
-  font-size:14px;
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #222;
+  color: var(--meta);
+  font-size: 14px;
+  margin-top: 28px;
 }
 </style>
 </head>
 <body>
+
 <header>
   <div class="logo">
     Mosta9bali
@@ -116,13 +104,14 @@ footer{
 <main>
   <section class="welcome">
     <h1>Welcome to Mosta9bali!</h1>
-    <p>Hello, Habibi student! 🎓<br>Discover scholarships across the Arab & Islamic world and beyond. Explore, find, and claim the opportunity that’s right for you.</p>
-    <button class="cta" onclick="window.location='opportunities.html'">Explore Opportunities</button>
+    <p>Hello, Habibi student! 🎓<br>
+    Explore scholarships, opportunities, and your path to the future. Your journey starts here — your future, your power.</p>
   </section>
 </main>
 
 <footer>
   Built for students. Controlled by: Karim Chennoufi.
 </footer>
+
 </body>
 </html>
