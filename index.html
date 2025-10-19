@@ -18,48 +18,236 @@
 }
 
 /* GENERAL */
-body { margin: 0; font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 
 /* HEADER */
-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: rgba(0,0,0,0.9); border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 100; }
-.logo { font-size: 30px; font-family: 'Playfair Display', serif; font-weight: 700; color: var(--gold); }
-.logo span { display: block; font-size: 13px; font-weight: 400; color: var(--gold-hover); }
-nav a { color: var(--text); text-decoration: none; margin-left: 25px; font-weight: 600; }
-nav a:hover { color: var(--gold); }
-.language-switch, .login-btn { background: none; border: 1px solid var(--gold); color: var(--gold); padding: 6px 14px; margin-left: 15px; border-radius: 6px; cursor: pointer; }
-.language-switch:hover, .login-btn:hover { background: var(--gold); color: #000; }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--gold);
+}
+.logo span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--gold-hover);
+}
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+nav a:hover {
+  color: var(--gold);
+}
+.language-switch,
+.login-btn {
+  background: none;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 6px 14px;
+  margin-left: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.language-switch:hover,
+.login-btn:hover {
+  background: var(--gold);
+  color: #000;
+}
 
-/* MAIN CONTENT */
-main { max-width: 1100px; margin: 70px auto; padding: 0 20px; }
-section h2 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--gold); text-align: center; margin-bottom: 30px; }
+/* MAIN */
+main {
+  max-width: 1100px;
+  margin: 70px auto;
+  padding: 0 20px;
+}
+section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-/* OPPORTUNITIES GRID */
-section.opportunities { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-.opportunity-card { background: var(--card-bg); border-radius: 12px; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.opportunity-card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
-.opportunity-card img { width: 100%; border-radius: 10px; height: 160px; object-fit: cover; margin-bottom: 12px; }
-.opportunity-card h3 { background: linear-gradient(90deg, var(--gold), var(--gold-hover)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 20px; margin: 8px 0; }
-.opportunity-meta { color: var(--meta); font-size: 14px; margin-bottom: 10px; }
-.opportunity-card a { text-decoration: none; display: inline-block; background: var(--gold); color: #000; font-weight: 600; padding: 8px 14px; border-radius: 6px; transition: background 0.2s ease; }
-.opportunity-card a:hover { background: var(--gold-hover); }
+/* OPPORTUNITIES */
+section.opportunities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.opportunity-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.opportunity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+.opportunity-card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 160px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+.opportunity-card h3 {
+  background: linear-gradient(90deg, var(--gold), var(--gold-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 20px;
+  margin: 8px 0;
+}
+.opportunity-meta {
+  color: var(--meta);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.opportunity-card a {
+  text-decoration: none;
+  display: inline-block;
+  background: var(--gold);
+  color: #000;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+.opportunity-card a:hover {
+  background: var(--gold-hover);
+}
 
 /* PHILOSOPHY */
-section.philosophy { margin-top: 80px; text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #111, #181818); border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
-section.philosophy p { font-size: 18px; max-width: 800px; margin: auto; line-height: 1.6; color: #ddd; }
+section.philosophy {
+  margin-top: 80px;
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #111, #181818);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+section.philosophy p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+  color: #ddd;
+}
 
 /* FOOTER */
-footer { text-align: center; padding: 25px; border-top: 1px solid #222; color: var(--meta); font-size: 14px; margin-top: 60px; }
+footer {
+  text-align: center;
+  padding: 25px;
+  border-top: 1px solid #222;
+  color: var(--meta);
+  font-size: 14px;
+  margin-top: 60px;
+}
 
-/* SIGN IN MODAL */
-#loginModal { display:flex; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:200; }
-#loginModal div { background:var(--card-bg); padding:30px; border-radius:12px; width:320px; text-align:center; position:relative; }
-#loginModal input { width:90%; padding:10px; margin:8px 0; border-radius:6px; border:none; }
-#loginModal button { margin-top:12px; background:var(--gold); color:#000; padding:10px 20px; border:none; border-radius:6px; font-weight:600; cursor:pointer; }
-#loginModal .close-btn { position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px; color:var(--gold); }
+/* LOGIN MODAL */
+#loginModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  animation: fadeIn 0.3s ease forwards;
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+#loginModal.active { display: flex; }
+#loginModal div {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+@keyframes slideUp {
+  from {transform: translateY(40px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+#loginModal input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: none;
+  background: #222;
+  color: var(--text);
+}
+#loginModal input:focus {
+  outline: 1px solid var(--gold);
+}
+#loginModal button {
+  margin-top: 12px;
+  background: var(--gold);
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+#loginModal button:hover {
+  background: var(--gold-hover);
+}
+#loginModal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--gold);
+}
+#loginMessage {
+  color: var(--gold-hover);
+  font-size: 14px;
+  margin-top: 8px;
+}
 
 /* FADE-IN */
-.fade-in { opacity:0; transform: translateY(20px); transition: all 0.8s ease; }
-.fade-in.visible { opacity:1; transform: translateY(0); }
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 </head>
 <body>
@@ -71,7 +259,7 @@ footer { text-align: center; padding: 25px; border-top: 1px solid #222; color: v
     <a href="opportunities.html">Opportunities</a>
     <a href="contact.html">Contact</a>
     <button class="language-switch" onclick="switchLang()">AR</button>
-    <button class="login-btn" onclick="showLogin()">Sign In / Sign Up</button>
+    <button class="login-btn" onclick="showLogin()">Sign In</button>
   </nav>
 </header>
 
@@ -119,69 +307,75 @@ footer { text-align: center; padding: 25px; border-top: 1px solid #222; color: v
     <input type="password" id="password" placeholder="Password" required>
     <button onclick="signUp()">Sign Up</button>
     <button onclick="signIn()">Sign In</button>
+    <div id="loginMessage"></div>
+    <p><a href="#" style="color:var(--gold-hover); font-size:13px;">Forgot Password?</a></p>
   </div>
 </div>
 
-<!-- Firebase SDK -->
+<!-- FIREBASE SCRIPT -->
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
 
-  // Your Firebase config
-  const firebaseConfig = {
-    apiKey: "AIzaSyBQvMCwUtuERjOYlaZf4neLj-_Gic3iubE",
-    authDomain: "mosta9bali-8acb5.firebaseapp.com",
-    projectId: "mosta9bali-8acb5",
-    storageBucket: "mosta9bali-8acb5.firebasestorage.app",
-    messagingSenderId: "630198916475",
-    appId: "1:630198916475:web:f09fc18e6a37efcf3b99de",
-    measurementId: "G-J85075FEV1"
-  };
+const firebaseConfig = {
+  apiKey: "AIzaSyBQvMCwUtuERjOYlaZf4neLj-_Gic3iubE",
+  authDomain: "mosta9bali-8acb5.firebaseapp.com",
+  projectId: "mosta9bali-8acb5",
+  storageBucket: "mosta9bali-8acb5.firebasestorage.app",
+  messagingSenderId: "630198916475",
+  appId: "1:630198916475:web:f09fc18e6a37efcf3b99de"
+};
 
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  const auth = getAuth();
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
 
-  function switchLang(){ alert("Arabic version coming soon ❤️"); }
-  function showLogin(){ document.getElementById('loginModal').style.display='flex'; }
-  function closeLogin(){ document.getElementById('loginModal').style.display='none'; }
+window.switchLang = () => alert("Arabic version coming soon ❤️");
+window.showLogin = () => document.getElementById('loginModal').classList.add('active');
+window.closeLogin = () => document.getElementById('loginModal').classList.remove('active');
 
-  // Fade-in scroll
-  document.addEventListener("scroll", ()=>{
-    document.querySelectorAll('.fade-in').forEach(el=>{
-      if(el.getBoundingClientRect().top < window.innerHeight-100) el.classList.add('visible');
-    });
+document.addEventListener("scroll", () => {
+  document.querySelectorAll('.fade-in').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('visible');
   });
+});
 
-  // Auto-show modal
-  window.onload = showLogin;
+function showMessage(msg, color="#f8e78e") {
+  const message = document.getElementById('loginMessage');
+  message.textContent = msg;
+  message.style.color = color;
+}
 
-  // Sign Up
-  window.signUp = function(){
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    createUserWithEmailAndPassword(auth,email,password)
-      .then(()=>{ alert('Sign Up Successful!'); closeLogin(); })
-      .catch(err=>alert(err.message));
+// Sign Up
+window.signUp = async function() {
+  const email = emailInput.value;
+  const password = passwordInput.value;
+  try {
+    await createUserWithEmailAndPassword(auth, email, password);
+    showMessage("✅ Sign Up Successful!");
+  } catch (err) {
+    showMessage("⚠️ " + err.message, "red");
   }
+};
 
-  // Sign In
-  window.signIn = function(){
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    signInWithEmailAndPassword(auth,email,password)
-      .then(()=>{ alert('Sign In Successful!'); closeLogin(); })
-      .catch(err=>alert(err.message));
+// Sign In
+window.signIn = async function() {
+  const email = emailInput.value;
+  const password = passwordInput.value;
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    showMessage("✅ Welcome back!");
+    setTimeout(closeLogin, 1000);
+  } catch (err) {
+    showMessage("⚠️ " + err.message, "red");
   }
+};
 
-  // Track user
-  onAuthStateChanged(auth, user=>{
-    if(user) console.log('User signed in:', user.email);
-    else console.log('No user signed in');
-  });
-
+// Auth state listener
+onAuthStateChanged(auth, user => {
+  if (user) console.log("User:", user.email);
+});
 </script>
 
 </body>
 </html>
+
