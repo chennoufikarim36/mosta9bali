@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UWC Short Course — Austria</title>
+<style>
+/* same style as your site */
+</style>
+</head>
+<body>
+<header> ... </header>
+
+<main>
+  <h1>UWC Short Course — Austria</h1>
+  <section class="details">
+    <img src="../images/opp1.jpg" alt="UWC Austria">
+    <h2>Program Details</h2>
+    <div class="meta">🇦🇹 Austria • Deadline: May 30, 2025 • Opens: June 1, 2025</div>
+    <p>Participate in the UWC Short Course and explore leadership, diplomacy, and cultural exchange.</p>
+
+    <div class="testimonials">
+      <h2>Testimonials</h2>
+      <div class="testimonial">
+        <img src="../images/testimonials/student1.jpg" alt="Student 1">
+        <p>"This course changed my life!" — Amina</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer> ... </footer>
+</body>
+</html>
