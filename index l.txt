@@ -1,37 +1,218 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome — My Website</title>
-  <style>
-    body {
-      background: #f5f5f5;
-      color: #222;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 100px;
-    }
-    button {
-      background: #0078d7;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 30px;
-    }
-    button:hover {
-      background: #005fa3;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mosta9bali — Opportunities</title>
+<style>
+:root{
+  --gold:#d4af37;
+  --gold-hover:#f0c75e;
+  --bg:#111;
+  --card-bg:#1a1a1a;
+  --text:#eee;
+  --meta:#aaa;
+}
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+}
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 30px;
+  background:#000;
+  border-bottom:1px solid #222;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.logo{
+  font-size:28px;
+  font-weight:700;
+  color:var(--gold);
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+.logo span{
+  font-size:14px;
+  font-weight:400;
+  color:var(--gold);
+  margin-top:2px;
+}
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:600;
+  transition:color 0.2s;
+}
+nav a:hover{
+  color:var(--gold-hover);
+}
+main{
+  max-width:1100px;
+  margin:40px auto;
+  padding:0 20px;
+}
+.controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+}
+input,select{
+  padding:10px 12px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+  font-size:14px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
+}
+.card{
+  background:var(--card-bg);
+  padding:16px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.5);
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.7);
+}
+.card h3{
+  margin:0 0 8px 0;
+  color:var(--gold);
+}
+.meta{
+  font-size:13px;
+  color:var(--meta);
+  margin-bottom:10px;
+}
+a.cta{
+  display:inline-block;
+  margin-top:8px;
+  padding:8px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  background:var(--gold);
+  color:#111;
+  font-weight:700;
+  transition:0.3s;
+}
+a.cta:hover{
+  background:var(--gold-hover);
+}
+footer{
+  text-align:center;
+  padding:20px;
+  border-top:1px solid #222;
+  color:var(--meta);
+  font-size:14px;
+  margin-top:28px;
+}
+</style>
 </head>
 <body>
-  <h1>Welcome to my website 🌍</h1>
-  <p>This is the English version.  
-     You can return to Arabic by clicking below 👇</p>
-  <a href="index-ar.html">
-    <button>العربية</button>
-  </a>
+<header>
+  <div class="logo">
+    Mosta9bali
+    <span>Your Future. Your Power.</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="opportunities.html">Opportunities</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <div class="controls">
+      <input id="search" placeholder="Search by name, country, or subject">
+      <select id="country">
+        <option value="">All countries</option>
+        <option>Switzerland</option>
+        <option>USA</option>
+        <option>UK</option>
+        <option>Austria</option>
+        <option>Germany</option>
+      </select>
+      <select id="level">
+        <option value="">Any level</option>
+        <option>Highschool</option>
+        <option>Undergraduate</option>
+        <option>Masters</option>
+        <option>PhD</option>
+      </select>
+    </div>
+    <div id="list" class="cards">
+      <!-- Scholarship cards will appear here -->
+    </div>
+  </section>
+</main>
+
+<footer>
+  Built for students. Controlled by: Karim Chennoufi.
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script>
+const search = document.getElementById('search');
+const country = document.getElementById('country');
+const level = document.getElementById('level');
+
+function filter(){
+  const q = search.value.trim().toLowerCase();
+  const c = country.value;
+  const l = level.value;
+  const cards = [...document.querySelectorAll('.card')];
+  cards.forEach(card=>{
+    const text = card.textContent.toLowerCase();
+    const matchQ = !q || text.includes(q);
+    const matchC = !c || card.dataset.country === c;
+    const matchL = !l || card.dataset.level === l;
+    card.style.display = (matchQ && matchC && matchL)?'':'none';
+  });
+}
+
+search.addEventListener('input',filter);
+country.addEventListener('change',filter);
+level.addEventListener('change',filter);
+
+// Google Sheet
+const sheetUrl = 'YOUR_CSV_GOOGLE_SHEET_URL';
+
+Papa.parse(sheetUrl,{
+  download:true,
+  header:true,
+  complete:function(results){
+    const list = document.getElementById('list');
+    list.innerHTML='';
+    results.data.forEach(s=>{
+      if(!s.Name) return;
+      const card = document.createElement('article');
+      card.className='card';
+      card.dataset.country=s.Country;
+      card.dataset.level=s.Level;
+      card.innerHTML=`
+        <h3>${s.Name}</h3>
+        <div class="meta">${s.Country} · ${s.Level} · ${s.Funding} · Deadline: ${s.Deadline}</div>
+        <p>${s.Notes}</p>
+        <a class="cta" href="${s.Link}" target="_blank" rel="noopener">Visit official page</a>
+      `;
+      list.appendChild(card);
+    });
+  }
+});
+</script>
 </body>
 </html>
