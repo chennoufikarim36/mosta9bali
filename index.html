@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>مستقبلي — My Future</title>
+  <title>Mosta9bali — My Future</title>
   <style>
     :root{
       --accent:#0b5;
@@ -14,38 +14,31 @@
       --meta:#666;
     }
     body{
-      font-family:"Noto Sans Arabic",system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif;
       margin:0;
       background:var(--bg);
       color:var(--text);
-      direction:rtl;
-      text-align:right;
     }
 
-    /* Language Selector */
-    .lang-select{
+    /* Flags Bar */
+    .flags-bar{
       display:flex;
       justify-content:center;
       align-items:center;
-      gap:14px;
-      padding:8px 0;
+      gap:12px;
+      padding:6px 0;
       background:#fff;
       border-bottom:1px solid #eee;
       box-shadow:0 1px 4px rgba(0,0,0,0.05);
     }
-    .lang-select button{
-      padding:8px 16px;
-      border:none;
-      border-radius:8px;
-      background:var(--accent);
-      color:#fff;
-      font-weight:600;
+    .flags-bar img{
+      width:28px;
+      height:auto;
       cursor:pointer;
-      transition:0.2s;
+      transition:transform 0.2s;
     }
-    .lang-select button:hover{
-      background:var(--accent-hover);
-      transform:scale(1.05);
+    .flags-bar img:hover{
+      transform:scale(1.2);
     }
 
     /* Header */
@@ -57,7 +50,6 @@
       gap:16px;
       background:#fff;
       box-shadow:0 2px 5px rgba(0,0,0,0.05);
-      justify-content:space-between;
     }
     .logo{
       font-weight:800;
@@ -86,7 +78,7 @@
     }
     .welcome p{
       font-size:18px;
-      line-height:1.6;
+      line-height:1.5;
     }
     .hero{
       display:flex;
@@ -116,7 +108,6 @@
       font-size:14px;
       outline:none;
       transition:0.2s;
-      text-align:right;
     }
     input:focus, select:focus{
       border-color:var(--accent);
@@ -177,45 +168,47 @@
   </style>
 </head>
 <body>
-
-  <!-- Language Selector -->
-  <div class="lang-select">
-    <button onclick="window.location.href='index-en.html'">English</button>
-    <button onclick="window.location.href='index-ar.html'">العربية</button>
+  <!-- Flags Bar -->
+  <div class="flags-bar">
+    <img src="https://flagcdn.com/w20/ch.png" alt="Switzerland" title="Switzerland">
+    <img src="https://flagcdn.com/w20/us.png" alt="USA" title="USA">
+    <img src="https://flagcdn.com/w20/gb.png" alt="UK" title="UK">
+    <img src="https://flagcdn.com/w20/at.png" alt="Austria" title="Austria">
+    <img src="https://flagcdn.com/w20/de.png" alt="Germany" title="Germany">
   </div>
 
   <header>
-    <div class="logo">مستقبلي <span style="font-weight:400;margin-right:8px;font-size:12px;color:#666">Mosta9bali</span></div>
+    <div class="logo">Mosta9bali <span style="font-weight:400;margin-left:8px;font-size:12px;color:#666">مستقبلي</span></div>
   </header>
 
   <main>
     <!-- Welcome Section -->
     <section class="welcome" aria-label="welcome">
-      <h1>مرحبًا بك في مستقبلي!</h1>
-      <p class="lead">مرحبًا أيها الطالب! 🎓 <br>هنا يمكنك اكتشاف المنح الدراسية في العالم العربي والإسلامي وخارجه. خذ وقتك، واستكشف، وابحث عن الفرصة المناسبة لك.</p>
+      <h1>Welcome to Mosta9bali!</h1>
+      <p class="lead">Hello, Habibi student! 🎓<br>Here you can discover scholarships across the Arab & Islamic world and beyond. Take your time, explore, and find the opportunity that’s right for you.</p>
     </section>
 
     <!-- Search & Filter Section -->
     <section class="hero" aria-label="intro">
-      <h1>مستقبلك يبدأ من هنا. منح دراسية للعالم.</h1>
-      <p class="lead">ابحث عن المنح الدراسية، المواعيد النهائية، ونصائح التقديم — موجهة نحو سويسرا، الولايات المتحدة، المملكة المتحدة، النمسا، ألمانيا وغيرها.</p>
+      <h1>Your future. Scholarships for the world.</h1>
+      <p class="lead">Find scholarships, deadlines, and application tips — focused on Switzerland, USA, UK, Austria, Germany and more.</p>
 
       <div class="controls">
-        <input id="search" placeholder="ابحث حسب اسم المنحة أو الدولة أو التخصص" />
+        <input id="search" placeholder="Search by scholarship name, country or subject" />
         <select id="country">
-          <option value="">كل الدول</option>
-          <option>سويسرا</option>
-          <option>الولايات المتحدة</option>
-          <option>المملكة المتحدة</option>
-          <option>النمسا</option>
-          <option>ألمانيا</option>
+          <option value="">All countries</option>
+          <option>Switzerland</option>
+          <option>USA</option>
+          <option>UK</option>
+          <option>Austria</option>
+          <option>Germany</option>
         </select>
         <select id="level">
-          <option value="">جميع المستويات</option>
-          <option>ثانوي</option>
-          <option>بكالوريوس</option>
-          <option>ماجستير</option>
-          <option>دكتوراه</option>
+          <option value="">Any level</option>
+          <option>Highschool</option>
+          <option>Undergraduate</option>
+          <option>Masters</option>
+          <option>PhD</option>
         </select>
       </div>
     </section>
@@ -229,7 +222,7 @@
   </main>
 
   <footer>
-    صُمم للطلاب. بإشراف كريم شنوفي.
+    Built for students. Controlled by: Karim Chennoufi.
   </footer>
 
   <!-- Search & Filter Script -->
@@ -267,9 +260,9 @@
       header: true,
       complete: function(results) {
         const list = document.getElementById('list');
-        list.innerHTML = ''; 
+        list.innerHTML = ''; // remove any example cards
         results.data.forEach(scholarship => {
-          if(!scholarship.Name) return;
+          if(!scholarship.Name) return; // skip empty rows
           const card = document.createElement('article');
           card.className = 'card';
           card.dataset.country = scholarship.Country;
@@ -277,9 +270,9 @@
 
           card.innerHTML = `
             <h3>${scholarship.Name}</h3>
-            <div class="meta">${scholarship.Country} · ${scholarship.Level} · ${scholarship.Funding} · آخر موعد: ${scholarship.Deadline}</div>
+            <div class="meta">${scholarship.Country} · ${scholarship.Level} · ${scholarship.Funding} · Deadline: ${scholarship.Deadline}</div>
             <p>${scholarship.Notes}</p>
-            <a class="cta" href="${scholarship.Link}" target="_blank" rel="noopener">زيارة الصفحة الرسمية</a>
+            <a class="cta" href="${scholarship.Link}" target="_blank" rel="noopener">Visit official page</a>
           `;
           list.appendChild(card);
         });
