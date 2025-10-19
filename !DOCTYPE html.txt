@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mosta9bali — Opportunities</title>
+<style>
+:root {
+  --gold: #d4af37;
+  --gold-hover: #f0c75e;
+  --bg: #111;
+  --card-bg: #1a1a1a;
+  --text: #eee;
+  --meta: #aaa;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background: #000;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gold);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.logo span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gold);
+  margin-top: 2px;
+}
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--gold-hover);
+}
+main {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: var(--gold);
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.7);
+}
+.card h3 {
+  margin: 0 0 8px 0;
+  color: var(--gold);
+}
+.card p {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+}
+.card .meta {
+  font-size: 12px;
+  color: var(--meta);
+  margin-bottom: 10px;
+}
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--gold);
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.card a:hover {
+  background: var(--gold-hover);
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #222;
+  color: var(--meta);
+  font-size: 14px;
+  margin-top: 28px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    Mosta9bali
+    <span>Your Future. Your Power.</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="opportunities.html">Opportunities</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Scholarship Opportunities</h1>
+  <div class="cards">
+    <div class="card">
+      <h3>Swiss Excellence Scholarship</h3>
+      <div class="meta">Switzerland · Masters · Fully Funded</div>
+      <p>Apply for a scholarship to study at top Swiss universities.</p>
+      <a href="#">Visit Official Page</a>
+    </div>
+    <div class="card">
+      <h3>USA Fulbright Program</h3>
+      <div class="meta">USA · Masters · Fully Funded</div>
+      <p>Opportunity to study and research in the United States.</p>
+      <a href="#">Visit Official Page</a>
+    </div>
+    <div class="card">
+      <h3>UK Chevening Scholarship</h3>
+      <div class="meta">UK · Masters · Fully Funded</div>
+      <p>Study in the United Kingdom with Chevening’s prestigious program.</p>
+      <a href="#">Visit Official Page</a>
+    </div>
+    <div class="card">
+      <h3>DAAD Scholarships</h3>
+      <div class="meta">Germany · Masters · Fully Funded</div>
+      <p>Study in Germany with DAAD scholarships for international students.</p>
+      <a href="#">Visit Official Page</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Built for students. Controlled by: Karim Chennoufi.
+</footer>
+
+</body>
+</html>

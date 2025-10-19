@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mosta9bali — Contact</title>
+<style>
+:root {
+  --gold: #d4af37;
+  --gold-hover: #f0c75e;
+  --bg: #111;
+  --input-bg: #1a1a1a;
+  --text: #eee;
+  --meta: #aaa;
+}
+body {
+  margin: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background: #000;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gold);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.logo span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gold);
+  margin-top: 2px;
+}
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--gold-hover);
+}
+main {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: var(--gold);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+input, textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: #eee;
+  font-size: 14px;
+  outline: none;
+}
+input:focus, textarea:focus {
+  box-shadow: 0 0 5px var(--gold);
+}
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--gold);
+  color: #111;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: var(--gold-hover);
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #222;
+  color: var(--meta);
+  font-size: 14px;
+  margin-top: 28px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    Mosta9bali
+    <span>Your Future. Your Power.</span>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="opportunities.html">Opportunities</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Contact Me</h1>
+  <form>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</main>
+
+<footer>
+  Built for students. Controlled by: Karim Chennoufi.
+</footer>
+
+</body>
+</html>
+
