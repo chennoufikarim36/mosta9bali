@@ -3,19 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mosta9bali — Home</title>
+<title>Mosta9bali — Your Future, Your Power</title>
 <style>
 :root {
   --gold: #d4af37;
   --gold-hover: #f0c75e;
-  --bg: #111;
-  --card-bg: #1a1a1a;
+  --bg: #0d0d0d;
+  --card-bg: #181818;
   --text: #eee;
   --meta: #aaa;
+  --accent: #222;
 }
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
@@ -23,7 +24,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
+  padding: 18px 32px;
   background: #000;
   border-bottom: 1px solid #222;
   position: sticky;
@@ -34,15 +35,13 @@ header {
   font-size: 28px;
   font-weight: 700;
   color: var(--gold);
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 .logo span {
-  font-size: 14px;
+  display: block;
+  font-size: 13px;
   font-weight: 400;
-  color: var(--gold);
-  margin-top: 2px;
+  color: var(--gold-hover);
 }
 nav a {
   color: var(--text);
@@ -70,31 +69,66 @@ nav a:hover {
 }
 main {
   max-width: 1100px;
-  margin: 50px auto;
-  padding: 0 20px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
 }
-section.welcome {
+.hero {
   text-align: center;
-  background: linear-gradient(135deg, #222, #333);
-  padding: 50px 20px;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #111, #202020);
   border-radius: 12px;
-  margin-bottom: 40px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  margin-top: 40px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 }
-section.welcome h1 {
-  font-size: 36px;
-  margin-bottom: 12px;
+.hero h1 {
+  font-size: 40px;
   color: var(--gold);
+  margin-bottom: 16px;
 }
-section.welcome p {
+.hero p {
   font-size: 18px;
-  line-height: 1.5;
   color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+.hero a {
+  background: var(--gold);
+  color: #000;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background 0.3s;
+}
+.hero a:hover {
+  background: var(--gold-hover);
+}
+.about {
+  margin: 70px 0 50px;
+  background: var(--accent);
+  padding: 50px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+.about h2 {
+  text-align: center;
+  color: var(--gold);
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.about p {
+  font-size: 17px;
+  line-height: 1.7;
+  text-align: center;
+  color: var(--text);
+  max-width: 800px;
+  margin: 0 auto;
 }
 section.opportunities {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
+  margin-top: 40px;
 }
 .opportunity-card {
   background: var(--card-bg);
@@ -104,8 +138,8 @@ section.opportunities {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .opportunity-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 .opportunity-card img {
   width: 100%;
@@ -139,11 +173,17 @@ section.opportunities {
 }
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   border-top: 1px solid #222;
   color: var(--meta);
   font-size: 14px;
-  margin-top: 28px;
+}
+footer a {
+  color: var(--gold-hover);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
 }
 </style>
 </head>
@@ -163,10 +203,18 @@ footer {
 </header>
 
 <main>
-  <section class="welcome">
-    <h1>Welcome to Mosta9bali!</h1>
-    <p>Salam, student! 🎓<br>
-    Explore scholarships, opportunities, and your path to the future. Your journey starts here — your future, your power.</p>
+  <section class="hero">
+    <h1>Welcome to Mosta9bali</h1>
+    <p>Empowering students worldwide with access to scholarships, programs, and learning opportunities.  
+    Discover your future today — your journey starts now.</p>
+    <a href="opportunities.html">Explore Opportunities</a>
+  </section>
+
+  <section class="about">
+    <h2>About Mosta9bali</h2>
+    <p>Mosta9bali is a vision born under <strong>ChennoufWorld</strong>, built to guide youth toward international scholarships, educational chances, and career growth.  
+    We believe in giving equal access to quality education for all — no matter where you are from.  
+    Join our mission to create a generation that learns, dreams, and achieves.</p>
   </section>
 
   <section class="opportunities">
@@ -194,17 +242,15 @@ footer {
 </main>
 
 <footer>
-  Built for dreamers. Controlled by: ChennoufiWorld.
+  <p>© 2025 <strong>Mosta9bali</strong> by <a href="#">ChennoufWorld Group</a> — All Rights Reserved.<br>
+  Built for dreamers, powered by ambition.</p>
 </footer>
 
 <script>
 function switchLang() {
-  // Placeholder for now – will redirect to Arabic version
   alert("Arabic version is coming very soon ❤️");
 }
 </script>
 
 </body>
 </html>
-
-
