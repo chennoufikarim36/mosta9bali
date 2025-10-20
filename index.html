@@ -1,206 +1,350 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="html-root">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mosta9bali — Starter Rebuild</title>
-  <meta name="description" content="Starter single-file rebuild for Mosta9bali. Responsive, accessible, bilingual skeleton with SEO basics." />
-  <!-- Open Graph (preview on social) -->
-  <meta property="og:title" content="Mosta9bali" />
-  <meta property="og:description" content="Portfolio & ideas" />
-  <meta property="og:type" content="website" />
-  <!-- Basic styles (keep in single file so it's easy to copy/paste) -->
+  <title>Mosta9bali — Own your look. Own your future.</title>
+  <meta name="description" content="Mosta9bali — Moroccan salon, fashion and opportunity platform. Bilingual EN/AR with traditional Moroccan design." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0f1724; /* dark navy */
-      --muted:#94a3b8;
-      --accent:#f59e0b; /* amber */
-      --card:#0b1220;
-      --glass: rgba(255,255,255,0.04);
-      --radius:16px;
-      --max-width:1100px;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      color-scheme: dark;
+      --bg:#fff8f6;
+      --card:#fff;
+      --text:#2b1e1e;
+      --muted:#6b5a57;
+      --accent:#9c2a2b; /* rich Moroccan red */
+      --gold:#c69b1f;
+      --tile:#f7e8e5;
+      --radius:14px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071027);color:#e6eef8}
-    .wrap{max-width:var(--max-width);margin:32px auto;padding:20px}
 
-    /* Header / Nav */
-    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ef4444);display:flex;align-items:center;justify-content:center;font-weight:700}
-    nav{display:flex;gap:12px;align-items:center}
-    a.btn{background:var(--glass);padding:8px 12px;border-radius:12px;text-decoration:none;color:inherit;font-size:14px}
-    a.primary{background:linear-gradient(90deg,var(--accent),#ef4444);color:#071027}
+    /* decorative Moroccan tile SVG as repeating background */
+    body{margin:0;background-color:var(--bg);color:var(--text);background-image: radial-gradient(circle at 10% 10%, rgba(156,42,43,0.02), transparent 8%), radial-gradient(circle at 90% 90%, rgba(198,155,31,0.02), transparent 10%);}
+    .pattern{position:fixed;left:0;top:0;right:0;bottom:0;pointer-events:none;opacity:0.18}
 
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:20px}
-    .hero h1{margin:0;font-size:28px}
-    .hero p{color:var(--muted);margin:8px 0 0}
-    .hero-actions{display:flex;gap:12px;margin-top:12px}
+    .wrap{max-width:1100px;margin:32px auto;padding:22px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ef4444);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:22px;box-shadow:0 8px 24px rgba(156,42,43,0.12)}
+    .title{font-weight:800;font-size:18px}
+    .tag{font-size:13px;color:var(--muted)}
 
-    /* Grid sections */
+    nav{display:flex;gap:10px;align-items:center}
+    .btn{padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--text);background:transparent;border:1px solid rgba(43,30,30,0.06);font-size:14px}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--gold));color:#fff;border:0;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+    .lang-toggle{display:flex;gap:6px}
+    .lang-toggle button{background:transparent;border:1px solid rgba(11,18,32,0.06);padding:6px 10px;border-radius:10px;font-size:13px}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:center;margin-top:20px}
+    .hero-card{background:var(--card);padding:28px;border-radius:18px;box-shadow:0 8px 40px rgba(43,30,30,0.06);border-left:6px solid var(--accent)}
+    .hero h1{margin:0;font-size:30px;line-height:1.03}
+    .hero p{color:var(--muted);margin-top:10px}
+    .actions{display:flex;gap:12px;margin-top:16px}
+
+    .ornament{background:linear-gradient(180deg,rgba(198,155,31,0.04),rgba(156,42,43,0.03));padding:18px;border-radius:14px;border:1px solid rgba(11,18,32,0.03)}
+    .ornament h3{margin:0 0 8px}
+
+    /* GRID */
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
-    .card{background:var(--card);padding:18px;border-radius:14px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(43,30,30,0.04)}
     .card h3{margin:0 0 8px}
     .muted{color:var(--muted);font-size:14px}
 
+    /* Salon */
+    .salon{display:flex;flex-direction:column;gap:12px}
+    .salon .item{display:flex;gap:12px;align-items:center}
+    .salon img{width:100px;height:72px;object-fit:cover;border-radius:8px;border:1px solid rgba(43,30,30,0.04)}
+
+    /* Contact */
+    form input, form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(43,30,30,0.06);font-size:14px}
+
     footer{margin-top:28px;color:var(--muted);font-size:13px}
 
-    /* Responsive */
-    @media (max-width:900px){
-      .grid{grid-template-columns:repeat(2,1fr)}
-    }
-    @media (max-width:600px){
-      header{flex-direction:column;align-items:flex-start}
-      .grid{grid-template-columns:1fr}
-      .hero{padding:18px}
-      .logo{width:48px;height:48px}
-    }
+    /* responsive */
+    @media (max-width:1000px){.hero{grid-template-columns:1fr} .grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:700px){header{flex-direction:column;align-items:flex-start} .grid{grid-template-columns:1fr} .logo{width:56px;height:56px}}
 
-    /* small utilities */
+    /* RTL */
+    .rtl{direction:rtl;font-family:Tajawal, Inter, system-ui}
+    .rtl .logo{font-family:Inter}
+
+    /* small helpers */
     .hidden{display:none}
-    .lang-toggle{display:flex;gap:8px}
+    a.link{color:var(--accent);text-decoration:none}
+
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <!-- Decorative SVG pattern (Moroccan arabesque) -->
+  <svg class="pattern" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <pattern id="tile" width="120" height="120" patternUnits="userSpaceOnUse">
+        <rect width="120" height="120" fill="transparent" />
+        <path d="M60 0 L75 30 L60 60 L45 30 Z" fill="rgba(156,42,43,0.06)" />
+        <circle cx="60" cy="60" r="6" fill="rgba(198,155,31,0.04)" />
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#tile)" />
+  </svg>
+
+  <div class="wrap" id="wrap">
     <header>
       <div class="brand">
-        <div class="logo">M</div>
+        <div class="logo" aria-hidden="true">M</div>
         <div>
-          <div style="font-weight:700">Mosta9bali</div>
-          <div class="muted" style="font-size:13px">Ideas · Fashion · Politics</div>
+          <div class="title" id="site-name">Mosta9bali</div>
+          <div class="tag" id="site-tag">Salon · Fashion · Opportunities</div>
         </div>
       </div>
+
       <nav>
-        <div class="lang-toggle" aria-hidden="false">
-          <button class="btn" id="lang-en">English</button>
-          <button class="btn" id="lang-ar">عربي</button>
+        <div class="lang-toggle" role="navigation" aria-label="language switch">
+          <button id="btn-en" aria-pressed="false">EN</button>
+          <button id="btn-ar" aria-pressed="false">ع</button>
         </div>
-        <a class="btn" href="#projects">Projects</a>
-        <a class="btn" href="#contact">Contact</a>
+        <a class="btn" href="#salon" id="nav-salon">Salon</a>
+        <a class="btn" href="#opportunities" id="nav-opps">Opportunities</a>
+        <a class="btn primary" href="#contact" id="nav-contact">Contact</a>
       </nav>
     </header>
 
     <main>
       <!-- HERO -->
       <section class="hero" id="home">
-        <div>
-          <h1 id="hero-title">Hello — I rebuild your site, starting here.</h1>
-          <p id="hero-sub">A modern, fast, bilingual starter. Edit text, replace images, then publish to GitHub Pages.</p>
-          <div class="hero-actions">
-            <a class="btn primary" id="cta-1" href="#projects">See Projects</a>
-            <a class="btn" id="cta-2" href="#contact">Work with me</a>
+        <div class="hero-card" role="region" aria-labelledby="hero-title">
+          <h1 id="hero-title">Mosta9bali — Own your look. Own your future.</h1>
+          <p id="hero-sub">A space born from Moroccan roots — a salon, a platform, and a promise: find your opportunity and shape your future. We move fast, we are honest, and we expect action.</p>
+          <div class="actions">
+            <a class="btn primary" href="#salon" id="cta-salon">Visit the Salon</a>
+            <a class="btn" href="#opportunities" id="cta-opps">See Opportunities</a>
+          </div>
+          <div style="margin-top:14px" class="muted">Language auto-detects to Arabic for Arabic browsers. Toggle anytime.</div>
+        </div>
+
+        <aside class="ornament" aria-hidden="false">
+          <h3 id="orn-title">Welcome — أهلاً</h3>
+          <p class="muted" id="orn-sub">A salon to craft your look, a platform to find chances, and a community to push you forward.</p>
+          <div style="margin-top:12px"><a class="link" href="#contact" id="orn-link">Work with us →</a></div>
+        </aside>
+      </section>
+
+      <!-- PHILOSOPHY -->
+      <section id="philosophy" style="margin-top:22px">
+        <h2 id="philo-title">Philosophy — فلسفة</h2>
+        <div class="card" style="margin-top:12px">
+          <p id="philo-long-en" class="muted hidden">Our philosophy is simple: give more than you take and teach what you wish you had learned sooner. We create spaces for practice — salons as studios, events as classrooms, and collaborations as the ladder up. We want the next generation to own their voice, their look, and their path in politics, fashion, and community life. We will be honest and direct, hold high standards, and expect action — not excuses.</p>
+          <p id="philo-long-ar" class="muted hidden">فلسفتنا بسيطة: أعطِ أكثر مما تأخذ، وعلّم ما تمنيت لو تعلمته مبكرًا. نصنع مساحات للتطبيق — الصالونات كاستوديوهات، الفعاليات كفصول، والتعاون كسلّم للارتقاء. نريد للجيل القادم أن يمتلك صوته ومظهره ومساره في السياسة والموضة والحياة المجتمعية. سنكون صريحين ومباشرين، نرفع المعايير، ونتوقع العمل — لا أعذار.</p>
+          <p class="muted" id="philo-footer-line">Freedom of expression, fairness of chance, dignity in craft. — حرية التعبير، عدالة الفرص، كرامة الحرفة.</p>
+        </div>
+      </section>
+
+      <!-- SALON -->
+      <section id="salon" style="margin-top:22px">
+        <h2 id="salon-title">Salon — الصالون</h2>
+        <div class="card salon" style="margin-top:12px">
+          <div class="item">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=60" alt="traditional styling"/>
+            <div>
+              <h3 id="salon-1-title">Traditional Styling — تصفيف تقليدي</h3>
+              <p class="muted" id="salon-1-desc">Hand-crafted looks inspired by Moroccan heritage: bridal, editorial and everyday style. We blend tradition with modern techniques.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="https://images.unsplash.com/photo-1541529086526-4e8f77b0c2a8?auto=format&fit=crop&w=800&q=60" alt="grooming"/>
+            <div>
+              <h3 id="salon-2-title">Grooming & Care — العناية والتجميل</h3>
+              <p class="muted" id="salon-2-desc">Modern grooming, skin care workshops and confidence coaching — for creators who need to look the part and feel it.</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="https://images.unsplash.com/photo-1520975912204-0c9a5b5b3d3f?auto=format&fit=crop&w=800&q=60" alt="workshop"/>
+            <div>
+              <h3 id="salon-3-title">Workshops & Community — ورشات ومجتمع</h3>
+              <p class="muted" id="salon-3-desc">Style workshops, portfolio reviews and community events. Bring your work, get feedback, and meet collaborators.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- 3-column grid for quick info -->
-      <section class="grid" aria-label="overview">
-        <article class="card">
-          <h3>Performance-first</h3>
-          <p class="muted">Minimal assets, responsive images, and small JS to keep pages fast — especially on mobile and slow networks.</p>
-        </article>
-        <article class="card">
-          <h3>Accessible & SEO-ready</h3>
-          <p class="muted">Clear semantic structure, meta tags, and friendly titles so search engines and screen readers understand you.</p>
-        </article>
-        <article class="card">
-          <h3>Bilingual (EN / AR)</h3>
-          <p class="muted">Simple language toggle implemented here; later you can add full translated pages or RTL layout for Arabic.</p>
-        </article>
-      </section>
-
-      <!-- Projects placeholder -->
-      <section id="projects" style="margin-top:22px">
-        <h2>Featured projects</h2>
+      <!-- OPPORTUNITIES -->
+      <section id="opportunities" style="margin-top:22px">
+        <h2 id="opps-title">Opportunities — الفرص</h2>
         <div class="grid" style="margin-top:12px">
           <div class="card">
-            <h3>Project — Collection 1</h3>
-            <p class="muted">Short description. Replace with images and links to the full project page.</p>
+            <h3 id="opp-1-title">UWC & Short Courses — دورات UWC</h3>
+            <p class="muted" id="opp-1-desc">Support for applications, essays and portfolios. We help young people prepare and get selected.</p>
           </div>
           <div class="card">
-            <h3>Project — UX / Website</h3>
-            <p class="muted">Short description. Add screenshots, GitHub link, or a case study.</p>
+            <h3 id="opp-2-title">Mentorship Program — برنامج توجيهي</h3>
+            <p class="muted" id="opp-2-desc">One-on-one mentorship for fashion, public speaking and leadership. Short, focused, and practical.</p>
           </div>
           <div class="card">
-            <h3>Blog / Writings</h3>
-            <p class="muted">Tease latest posts with links to full articles. Use a simple markdown-to-html pipeline for easy publishing.</p>
+            <h3 id="opp-3-title">Collab Calls & Scholarships — دعوات للتعاون</h3>
+            <p class="muted" id="opp-3-desc">Open calls for designers, photographers and writers. We share scholarships and paid opportunities when available.</p>
           </div>
         </div>
       </section>
 
-      <!-- Contact -->
+      <!-- CONTACT -->
       <section id="contact" style="margin-top:22px">
-        <h2>Contact</h2>
+        <h2 id="contact-title">Contact — تواصل</h2>
         <div class="card" style="margin-top:12px">
-          <p class="muted">Email: <a href="mailto:you@domain.com">you@domain.com</a></p>
-          <p class="muted">Or use this simple contact action (demo):</p>
-          <form id="contact-form">
+          <p class="muted">Email: <a href="mailto:hello@mosta9bali.com">hello@mosta9bali.com</a></p>
+          <p class="muted">Instagram: <a href="#" class="link">@mosta9bali</a> · YouTube: <a href="#" class="link">channel</a></p>
+          <p class="muted">Location: El Jadida, Morocco</p>
+
+          <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
             <label class="muted">Name<br><input name="name" placeholder="Your name" required></label><br><br>
-            <label class="muted">Message<br><textarea name="message" rows="4" placeholder="Write a short message" required></textarea></label><br><br>
-            <button type="submit" class="btn primary">Send (demo)</button>
+            <label class="muted">Email<br><input type="email" name="email" placeholder="you@domain.com" required></label><br><br>
+            <label class="muted">Message<br><textarea name="message" rows="5" placeholder="Write your message" required></textarea></label><br><br>
+            <button type="submit" class="btn primary">Send Message</button>
           </form>
+
+          <p class="muted" style="margin-top:10px">To receive messages, replace the Formspree action URL above with your form endpoint or set up Netlify Forms.</p>
         </div>
       </section>
 
     </main>
 
     <footer>
-      <div class="muted">Built for a full redesign. Copy this file into your repo to start. Need help? I will guide you step-by-step.</div>
+      <div class="muted">© Mosta9bali — Find your opportunity. Forge your future. — اكتشف فرصتك، وشكّل مستقبلك.</div>
     </footer>
   </div>
 
   <script>
-    // Small JS helpers: language toggle + contact demo
-    const enText = {
-      title: 'Hello — I rebuild your site, starting here.',
-      sub: 'A modern, fast, bilingual starter. Edit text, replace images, then publish to GitHub Pages.'
-    };
-    const arText = {
-      title: 'مرحبا — هذا نموذج إعادة بناء للموقع.',
-      sub: 'نسخة مبدئية حديثة وسريعة. حرّر النص واستبدل الصور ثم انشر على GitHub Pages.'
+    // bilingual content object
+    const content = {
+      en:{
+        siteName:'Mosta9bali',
+        siteTag:'Salon · Fashion · Opportunities',
+        heroTitle:'Mosta9bali — Own your look. Own your future.',
+        heroSub:'A space born from Moroccan roots — a salon, a platform, and a promise: find your opportunity and shape your future. We move fast, we are honest, and we expect action.',
+        ornTitle:'Welcome — أهلاً',
+        ornSub:'A salon to craft your look, a platform to find chances, and a community to push you forward.',
+        philoLong:document ? null : null, // placeholder
+        salonTitle:'Salon — Services',
+        salon1Title:'Traditional Styling — تصفيف تقليدي',
+        salon1Desc:'Hand-crafted looks inspired by Moroccan heritage: bridal, editorial and everyday style. We blend tradition with modern techniques.',
+        salon2Title:'Grooming & Care — العناية والتجميل',
+        salon2Desc:'Modern grooming, skin care workshops and confidence coaching — for creators who need to look the part and feel it.',
+        salon3Title:'Workshops & Community — ورشات ومجتمع',
+        salon3Desc:'Style workshops, portfolio reviews and community events. Bring your work, get feedback, and meet collaborators.',
+        oppsTitle:'Opportunities',
+        opp1Title:'UWC & Short Courses — دورات UWC',
+        opp1Desc:'Support for applications, essays and portfolios. We help young people prepare and get selected.',
+        opp2Title:'Mentorship Program — برنامج توجيهي',
+        opp2Desc:'One-on-one mentorship for fashion, public speaking and leadership. Short, focused, and practical.',
+        opp3Title:'Collab Calls & Scholarships — دعوات للتعاون',
+        opp3Desc:'Open calls for designers, photographers and writers. We share scholarships and paid opportunities when available.',
+        contactTitle:'Contact'
+      },
+      ar:{
+        siteName:'مستقبالي',
+        siteTag:'صالون · موضة · فرص',
+        heroTitle:'مستقبالي — امتلك مظهرك. امتلك مستقبلك.',
+        heroSub:'مساحة ولدت من الجذور المغربية — صالون، منصة، ووعد: اعثر على فرصتك وشكّل مستقبلك. نتحرك بسرعة، نكون صريحين، ونتوقع العمل.',
+        ornTitle:'مميز — أهلاً',
+        ornSub:'صالون لصنع مظهرك، منصة لإيجاد الفرص، ومجتمع يدفعك للأمام.',
+        philoLong:'فلسفتنا بسيطة: أعطِ أكثر مما تأخذ، وعلّم ما تمنيت لو تعلمته مبكرًا. نصنع مساحات للتطبيق — الصالونات كاستوديوهات، الفعاليات كفصول، والتعاون كسلّم للارتقاء. نريد للجيل القادم أن يمتلك صوته ومظهره ومساره في السياسة والموضة والحياة المجتمعية. سنكون صريحين ومباشرين، نرفع المعايير، ونتوقع العمل — لا أعذار.',
+        salonTitle:'الصالون — الخدمات',
+        salon1Title:'تصفيف تقليدي',
+        salon1Desc:'إطلالات مصممة يدوياً مستوحاة من التراث المغربي: للعروس، للمجلات، أو للاستخدام اليومي. نحن نمزج التقليد بالتقنيات الحديثة.',
+        salon2Title:'العناية والتجميل',
+        salon2Desc:'ورشات عناية بالبشرة وتجميل عصري وتدريبات على الثقة — لمن يريد أن يبدو مناسبًا ويشعر بذلك.',
+        salon3Title:'ورشات ومجتمع',
+        salon3Desc:'ورشات حول الأسلوب، مراجعات بورتفوليو، وفعاليات مجتمعية. أحضر عملك، واحصل على ملاحظات، وتعرّف على متعاونين.',
+        oppsTitle:'الفرص',
+        opp1Title:'دورات UWC',
+        opp1Desc:'دعم لطلبات الالتحاق، المقالات، والبورتفوليو. نساعد الشباب على الاستعداد والقبول.',
+        opp2Title:'برنامج توجيهي',
+        opp2Desc:'توجيه فردي في الموضة، الخطابة العامة، والقيادة. قصير ومباشر وعملي.',
+        opp3Title:'دعوات للتعاون والمنح',
+        opp3Desc:'دعوات مفتوحة للمصممين والمصورين والكتاب. نشارك المنح والفرص المأجورة عند توافرها.',
+        contactTitle:'تواصل'
+      }
     };
 
-    document.getElementById('lang-en').addEventListener('click', ()=>{
-      document.getElementById('hero-title').textContent = enText.title;
-      document.getElementById('hero-sub').textContent = enText.sub;
-    });
-    document.getElementById('lang-ar').addEventListener('click', ()=>{
-      document.getElementById('hero-title').textContent = arText.title;
-      document.getElementById('hero-sub').textContent = arText.sub;
-      // NOTE: this is a simple text-swap. For proper Arabic/RTL support we will add dir="rtl" and mirrored layout later.
+    // set long philosophy texts into DOM (to avoid huge inline object)
+    document.getElementById('philo-long-en').textContent = 'Our philosophy is simple: give more than you take and teach what you wish you had learned sooner. We create spaces for practice — salons as studios, events as classrooms, and collaborations as the ladder up. We want the next generation to own their voice, their look, and their path in politics, fashion, and community life. We will be honest and direct, hold high standards, and expect action — not excuses.';
+    document.getElementById('philo-long-ar').textContent = content.ar.philoLong;
+
+    // language switcher & RTL handling
+    function setLanguage(lang){
+      const isAr = lang==='ar';
+      const root = document.getElementById('html-root');
+      const wrap = document.getElementById('wrap');
+      if(isAr){ root.setAttribute('lang','ar'); wrap.classList.add('rtl'); } else { root.setAttribute('lang','en'); wrap.classList.remove('rtl'); }
+
+      const t = content[lang];
+      document.getElementById('site-name').textContent = t.siteName;
+      document.getElementById('site-tag').textContent = t.siteTag;
+      document.getElementById('hero-title').textContent = t.heroTitle;
+      document.getElementById('hero-sub').textContent = t.heroSub;
+      document.getElementById('orn-title').textContent = t.ornTitle;
+      document.getElementById('orn-sub').textContent = t.ornSub;
+      document.getElementById('philo-footer-line').textContent = isAr ? 'حرية التعبير، عدالة الفرص، كرامة الحرفة.' : 'Freedom of expression, fairness of chance, dignity in craft.';
+
+      // salon
+      document.getElementById('salon-title').textContent = t.salonTitle;
+      document.getElementById('salon-1-title').textContent = t.salon1Title;
+      document.getElementById('salon-1-desc').textContent = t.salon1Desc;
+      document.getElementById('salon-2-title').textContent = t.salon2Title;
+      document.getElementById('salon-2-desc').textContent = t.salon2Desc;
+      document.getElementById('salon-3-title').textContent = t.salon3Title;
+      document.getElementById('salon-3-desc').textContent = t.salon3Desc;
+
+      // opps
+      document.getElementById('opps-title').textContent = t.oppsTitle;
+      document.getElementById('opp-1-title').textContent = t.opp1Title;
+      document.getElementById('opp-1-desc').textContent = t.opp1Desc;
+      document.getElementById('opp-2-title').textContent = t.opp2Title;
+      document.getElementById('opp-2-desc').textContent = t.opp2Desc;
+      document.getElementById('opp-3-title').textContent = t.opp3Title;
+      document.getElementById('opp-3-desc').textContent = t.opp3Desc;
+
+      document.getElementById('contact-title').textContent = t.contactTitle;
+
+      try{ localStorage.setItem('mosta9_lang', lang); }catch(e){}
+      document.getElementById('btn-en').setAttribute('aria-pressed', String(!isAr));
+      document.getElementById('btn-ar').setAttribute('aria-pressed', String(isAr));
+    }
+
+    // auto-detect
+    (function(){
+      const saved = (function(){try{return localStorage.getItem('mosta9_lang')}catch(e){return null}})();
+      if(saved){ setLanguage(saved); return; }
+      const navLang = navigator.language || navigator.userLanguage || 'en';
+      const short = navLang.slice(0,2).toLowerCase();
+      if(short==='ar') setLanguage('ar'); else setLanguage('en');
+    })();
+
+    document.getElementById('btn-en').addEventListener('click', ()=> setLanguage('en'));
+    document.getElementById('btn-ar').addEventListener('click', ()=> setLanguage('ar'));
+
+    // contact demo — Formspree action placeholder
+    document.getElementById('contact-form').addEventListener('submit',(e)=>{
+      // allow real submission if user replaced action; otherwise prevent default and show hint
+      const action = e.target.getAttribute('action') || '';
+      if(action.includes('formspree.io')){
+        // let it submit normally
+        return;
+      } else {
+        e.preventDefault();
+        alert('This form is a demo. To receive messages, replace the action URL with your Formspree or Netlify form endpoint.');
+      }
     });
 
-    // Contact form demo — does not send email; shows a friendly fake response
-    document.getElementById('contact-form').addEventListener('submit', (e)=>{
-      e.preventDefault();
-      alert('Thanks — message received (demo). Replace with Formspree, Netlify Forms, or a server endpoint to enable real submissions.');
-      e.target.reset();
-    });
   </script>
 
-  <!--
-    HOW TO USE THIS FILE (quick notes for you):
-    1) Replace text and images with your content.
-    2) For Arabic fully: add dir="rtl" to <html> and swap layout (we will prepare CSS for RTL).
-    3) Deploy: push to your GitHub repo and enable GitHub Pages (use branch 'gh-pages' or 'main' + /docs).
-    4) Forms: connect to Formspree or Netlify Forms or send emails via a serverless function.
-    5) Performance: optimize images (webp), remove unused JS, serve via CDN.
-
-    NEXT SUGGESTED FILES to add to your repo:
-    - /assets/images/ (optimized images)
-    - /css/styles.css (if you want external styles)
-    - /posts/ (markdown blog posts)
-    - /projects/*.html (detailed project pages)
-
-    If you want, I can now:
-    - generate a full RTL + Arabic translation (including mirrored layout),
-    - create separate HTML pages for Projects and Blog,
-    - prepare a README with exact Git commands to deploy to GitHub Pages,
-    - or convert this to a lightweight React/Vite or Eleventy static site.
+  <!-- NOTES:
+    - This is the full rebuilt single-file site with Traditional Moroccan look, EN/AR bilingual support and auto-switch.
+    - Replace placeholder images and the Formspree action with your real assets.
+    - If you want, I will now: (a) replace images with your uploads, (b) add a custom SVG tile variation, (c) produce a deploy README with exact git commands.
   -->
 </body>
 </html>
+
