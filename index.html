@@ -1,380 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mosta9bali — Your Future, Your Power</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mosta9bali — Starter Rebuild</title>
+  <meta name="description" content="Starter single-file rebuild for Mosta9bali. Responsive, accessible, bilingual skeleton with SEO basics." />
+  <!-- Open Graph (preview on social) -->
+  <meta property="og:title" content="Mosta9bali" />
+  <meta property="og:description" content="Portfolio & ideas" />
+  <meta property="og:type" content="website" />
+  <!-- Basic styles (keep in single file so it's easy to copy/paste) -->
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --muted:#94a3b8;
+      --accent:#f59e0b; /* amber */
+      --card:#0b1220;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      --max-width:1100px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071027);color:#e6eef8}
+    .wrap{max-width:var(--max-width);margin:32px auto;padding:20px}
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    /* Header / Nav */
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ef4444);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav{display:flex;gap:12px;align-items:center}
+    a.btn{background:var(--glass);padding:8px 12px;border-radius:12px;text-decoration:none;color:inherit;font-size:14px}
+    a.primary{background:linear-gradient(90deg,var(--accent),#ef4444);color:#071027}
 
-<style>
-:root {
-  --gold: #d4af37;
-  --gold-hover: #f8e78e;
-  --bg: #0b0b0b;
-  --card-bg: #161616;
-  --text: #eee;
-  --meta: #aaa;
-}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:20px}
+    .hero h1{margin:0;font-size:28px}
+    .hero p{color:var(--muted);margin:8px 0 0}
+    .hero-actions{display:flex;gap:12px;margin-top:12px}
 
-/* GENERAL */
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
+    /* Grid sections */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .card{background:var(--card);padding:18px;border-radius:14px}
+    .card h3{margin:0 0 8px}
+    .muted{color:var(--muted);font-size:14px}
 
-/* HEADER */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 40px;
-  background: rgba(0, 0, 0, 0.9);
-  border-bottom: 1px solid #222;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.logo {
-  font-size: 30px;
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  color: var(--gold);
-}
-.logo span {
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--gold-hover);
-}
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  margin-left: 25px;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-nav a:hover {
-  color: var(--gold);
-}
-.language-switch,
-.login-btn {
-  background: none;
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  padding: 6px 14px;
-  margin-left: 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.language-switch:hover,
-.login-btn:hover {
-  background: var(--gold);
-  color: #000;
-}
+    footer{margin-top:28px;color:var(--muted);font-size:13px}
 
-/* MAIN */
-main {
-  max-width: 1100px;
-  margin: 70px auto;
-  padding: 0 20px;
-}
-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  color: var(--gold);
-  text-align: center;
-  margin-bottom: 30px;
-}
+    /* Responsive */
+    @media (max-width:900px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      header{flex-direction:column;align-items:flex-start}
+      .grid{grid-template-columns:1fr}
+      .hero{padding:18px}
+      .logo{width:48px;height:48px}
+    }
 
-/* OPPORTUNITIES */
-section.opportunities {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-.opportunity-card {
-  background: var(--card-bg);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.opportunity-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-}
-.opportunity-card img {
-  width: 100%;
-  border-radius: 10px;
-  height: 160px;
-  object-fit: cover;
-  margin-bottom: 12px;
-}
-.opportunity-card h3 {
-  background: linear-gradient(90deg, var(--gold), var(--gold-hover));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 20px;
-  margin: 8px 0;
-}
-.opportunity-meta {
-  color: var(--meta);
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-.opportunity-card a {
-  text-decoration: none;
-  display: inline-block;
-  background: var(--gold);
-  color: #000;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 6px;
-  transition: background 0.2s ease;
-}
-.opportunity-card a:hover {
-  background: var(--gold-hover);
-}
-
-/* PHILOSOPHY */
-section.philosophy {
-  margin-top: 80px;
-  text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #111, #181818);
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-}
-section.philosophy p {
-  font-size: 18px;
-  max-width: 800px;
-  margin: auto;
-  line-height: 1.6;
-  color: #ddd;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 25px;
-  border-top: 1px solid #222;
-  color: var(--meta);
-  font-size: 14px;
-  margin-top: 60px;
-}
-
-/* LOGIN MODAL */
-#loginModal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-  z-index: 200;
-  animation: fadeIn 0.3s ease forwards;
-}
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-#loginModal.active { display: flex; }
-#loginModal div {
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: 12px;
-  width: 320px;
-  text-align: center;
-  position: relative;
-  animation: slideUp 0.3s ease;
-}
-@keyframes slideUp {
-  from {transform: translateY(40px); opacity: 0;}
-  to {transform: translateY(0); opacity: 1;}
-}
-#loginModal input {
-  width: 90%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 6px;
-  border: none;
-  background: #222;
-  color: var(--text);
-}
-#loginModal input:focus {
-  outline: 1px solid var(--gold);
-}
-#loginModal button {
-  margin-top: 12px;
-  background: var(--gold);
-  color: #000;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-#loginModal button:hover {
-  background: var(--gold-hover);
-}
-#loginModal .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
-  font-size: 20px;
-  color: var(--gold);
-}
-#loginMessage {
-  color: var(--gold-hover);
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-/* FADE-IN */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>
+    /* small utilities */
+    .hidden{display:none}
+    .lang-toggle{display:flex;gap:8px}
+  </style>
 </head>
 <body>
-
-<header>
-  <div class="logo">Mosta9bali<span>Your Future. Your Power.</span></div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="opportunities.html">Opportunities</a>
-    <a href="contact.html">Contact</a>
-    <button class="language-switch" onclick="switchLang()">AR</button>
-    <button class="login-btn" onclick="showLogin()">Sign In</button>
-  </nav>
-</header>
-
-<main>
-  <section class="fade-in">
-    <h2>Featured Opportunities</h2>
-    <div class="opportunities">
-      <div class="opportunity-card">
-        <img src="images/opp1.jpg" alt="Opportunity 1">
-        <h3>UWC Short Course — Austria</h3>
-        <div class="opportunity-meta">🇦🇹 Austria • Deadline: May 30, 2025</div>
-        <a href="opportunities/uwc-austria.html">See Details</a>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">M</div>
+        <div>
+          <div style="font-weight:700">Mosta9bali</div>
+          <div class="muted" style="font-size:13px">Ideas · Fashion · Politics</div>
+        </div>
       </div>
-      <div class="opportunity-card">
-        <img src="images/opp2.jpg" alt="Opportunity 2">
-        <h3>UN Youth Delegate Program</h3>
-        <div class="opportunity-meta">🇺🇳 Global • Deadline: June 15, 2025</div>
-        <a href="opportunities/un-delegate.html">See Details</a>
-      </div>
-      <div class="opportunity-card">
-        <img src="images/opp3.jpg" alt="Opportunity 3">
-        <h3>Yale Young Global Scholars</h3>
-        <div class="opportunity-meta">🇺🇸 USA • Deadline: February 1, 2026</div>
-        <a href="opportunities/yygs.html">See Details</a>
-      </div>
-    </div>
-  </section>
+      <nav>
+        <div class="lang-toggle" aria-hidden="false">
+          <button class="btn" id="lang-en">English</button>
+          <button class="btn" id="lang-ar">عربي</button>
+        </div>
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <section class="philosophy fade-in">
-    <h2>Our Philosophy</h2>
-    <p>At <strong>Mosta9bali</strong>, we believe every student deserves a chance to shine. We connect ambition with opportunity, and dreams with reality.</p>
-  </section>
-</main>
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="home">
+        <div>
+          <h1 id="hero-title">Hello — I rebuild your site, starting here.</h1>
+          <p id="hero-sub">A modern, fast, bilingual starter. Edit text, replace images, then publish to GitHub Pages.</p>
+          <div class="hero-actions">
+            <a class="btn primary" id="cta-1" href="#projects">See Projects</a>
+            <a class="btn" id="cta-2" href="#contact">Work with me</a>
+          </div>
+        </div>
+      </section>
 
-<footer>
-  <p>© 2025 Mosta9bali — A Project by <strong>ChennoufiWorld</strong></p>
-</footer>
+      <!-- 3-column grid for quick info -->
+      <section class="grid" aria-label="overview">
+        <article class="card">
+          <h3>Performance-first</h3>
+          <p class="muted">Minimal assets, responsive images, and small JS to keep pages fast — especially on mobile and slow networks.</p>
+        </article>
+        <article class="card">
+          <h3>Accessible & SEO-ready</h3>
+          <p class="muted">Clear semantic structure, meta tags, and friendly titles so search engines and screen readers understand you.</p>
+        </article>
+        <article class="card">
+          <h3>Bilingual (EN / AR)</h3>
+          <p class="muted">Simple language toggle implemented here; later you can add full translated pages or RTL layout for Arabic.</p>
+        </article>
+      </section>
 
-<!-- SIGN IN / SIGN UP MODAL -->
-<div id="loginModal">
-  <div>
-    <span class="close-btn" onclick="closeLogin()">&times;</span>
-    <h2 style="color:var(--gold)">Sign In / Sign Up</h2>
-    <input type="email" id="email" placeholder="Email" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <button onclick="signUp()">Sign Up</button>
-    <button onclick="signIn()">Sign In</button>
-    <div id="loginMessage"></div>
-    <p><a href="#" style="color:var(--gold-hover); font-size:13px;">Forgot Password?</a></p>
+      <!-- Projects placeholder -->
+      <section id="projects" style="margin-top:22px">
+        <h2>Featured projects</h2>
+        <div class="grid" style="margin-top:12px">
+          <div class="card">
+            <h3>Project — Collection 1</h3>
+            <p class="muted">Short description. Replace with images and links to the full project page.</p>
+          </div>
+          <div class="card">
+            <h3>Project — UX / Website</h3>
+            <p class="muted">Short description. Add screenshots, GitHub link, or a case study.</p>
+          </div>
+          <div class="card">
+            <h3>Blog / Writings</h3>
+            <p class="muted">Tease latest posts with links to full articles. Use a simple markdown-to-html pipeline for easy publishing.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" style="margin-top:22px">
+        <h2>Contact</h2>
+        <div class="card" style="margin-top:12px">
+          <p class="muted">Email: <a href="mailto:you@domain.com">you@domain.com</a></p>
+          <p class="muted">Or use this simple contact action (demo):</p>
+          <form id="contact-form">
+            <label class="muted">Name<br><input name="name" placeholder="Your name" required></label><br><br>
+            <label class="muted">Message<br><textarea name="message" rows="4" placeholder="Write a short message" required></textarea></label><br><br>
+            <button type="submit" class="btn primary">Send (demo)</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="muted">Built for a full redesign. Copy this file into your repo to start. Need help? I will guide you step-by-step.</div>
+    </footer>
   </div>
-</div>
 
-<!-- FIREBASE SCRIPT -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+  <script>
+    // Small JS helpers: language toggle + contact demo
+    const enText = {
+      title: 'Hello — I rebuild your site, starting here.',
+      sub: 'A modern, fast, bilingual starter. Edit text, replace images, then publish to GitHub Pages.'
+    };
+    const arText = {
+      title: 'مرحبا — هذا نموذج إعادة بناء للموقع.',
+      sub: 'نسخة مبدئية حديثة وسريعة. حرّر النص واستبدل الصور ثم انشر على GitHub Pages.'
+    };
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBQvMCwUtuERjOYlaZf4neLj-_Gic3iubE",
-  authDomain: "mosta9bali-8acb5.firebaseapp.com",
-  projectId: "mosta9bali-8acb5",
-  storageBucket: "mosta9bali-8acb5.firebasestorage.app",
-  messagingSenderId: "630198916475",
-  appId: "1:630198916475:web:f09fc18e6a37efcf3b99de"
-};
+    document.getElementById('lang-en').addEventListener('click', ()=>{
+      document.getElementById('hero-title').textContent = enText.title;
+      document.getElementById('hero-sub').textContent = enText.sub;
+    });
+    document.getElementById('lang-ar').addEventListener('click', ()=>{
+      document.getElementById('hero-title').textContent = arText.title;
+      document.getElementById('hero-sub').textContent = arText.sub;
+      // NOTE: this is a simple text-swap. For proper Arabic/RTL support we will add dir="rtl" and mirrored layout later.
+    });
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+    // Contact form demo — does not send email; shows a friendly fake response
+    document.getElementById('contact-form').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      alert('Thanks — message received (demo). Replace with Formspree, Netlify Forms, or a server endpoint to enable real submissions.');
+      e.target.reset();
+    });
+  </script>
 
-window.switchLang = () => alert("Arabic version coming soon ❤️");
-window.showLogin = () => document.getElementById('loginModal').classList.add('active');
-window.closeLogin = () => document.getElementById('loginModal').classList.remove('active');
+  <!--
+    HOW TO USE THIS FILE (quick notes for you):
+    1) Replace text and images with your content.
+    2) For Arabic fully: add dir="rtl" to <html> and swap layout (we will prepare CSS for RTL).
+    3) Deploy: push to your GitHub repo and enable GitHub Pages (use branch 'gh-pages' or 'main' + /docs).
+    4) Forms: connect to Formspree or Netlify Forms or send emails via a serverless function.
+    5) Performance: optimize images (webp), remove unused JS, serve via CDN.
 
-document.addEventListener("scroll", () => {
-  document.querySelectorAll('.fade-in').forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('visible');
-  });
-});
+    NEXT SUGGESTED FILES to add to your repo:
+    - /assets/images/ (optimized images)
+    - /css/styles.css (if you want external styles)
+    - /posts/ (markdown blog posts)
+    - /projects/*.html (detailed project pages)
 
-function showMessage(msg, color="#f8e78e") {
-  const message = document.getElementById('loginMessage');
-  message.textContent = msg;
-  message.style.color = color;
-}
-
-// Sign Up
-window.signUp = async function() {
-  const email = emailInput.value;
-  const password = passwordInput.value;
-  try {
-    await createUserWithEmailAndPassword(auth, email, password);
-    showMessage("✅ Sign Up Successful!");
-  } catch (err) {
-    showMessage("⚠️ " + err.message, "red");
-  }
-};
-
-// Sign In
-window.signIn = async function() {
-  const email = emailInput.value;
-  const password = passwordInput.value;
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    showMessage("✅ Welcome back!");
-    setTimeout(closeLogin, 1000);
-  } catch (err) {
-    showMessage("⚠️ " + err.message, "red");
-  }
-};
-
-// Auth state listener
-onAuthStateChanged(auth, user => {
-  if (user) console.log("User:", user.email);
-});
-</script>
-
+    If you want, I can now:
+    - generate a full RTL + Arabic translation (including mirrored layout),
+    - create separate HTML pages for Projects and Blog,
+    - prepare a README with exact Git commands to deploy to GitHub Pages,
+    - or convert this to a lightweight React/Vite or Eleventy static site.
+  -->
 </body>
 </html>
